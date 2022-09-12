@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoshuai.mapper.PatientInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xiaoshuai.entity.PatientInfo">
+        <id column="visit_sn" property="visitSn" />
+        <result column="patient_id" property="patientId" />
+        <result column="visit_type" property="visitType" />
+        <result column="visit_card_no" property="visitCardNo" />
+        <result column="outpatient_no" property="outpatientNo" />
+        <result column="visit_times" property="visitTimes" />
+        <result column="visit_datetime" property="visitDatetime" />
+        <result column="medical_record_no" property="medicalRecordNo" />
+        <result column="inpatient_no" property="inpatientNo" />
+        <result column="hospitalization_times" property="hospitalizationTimes" />
+        <result column="admission_datetime" property="admissionDatetime" />
+        <result column="discharge_datetime" property="dischargeDatetime" />
+        <result column="visit_doctor_no" property="visitDoctorNo" />
+        <result column="name" property="name" />
+        <result column="gender" property="gender" />
+        <result column="date_of_birth" property="dateOfBirth" />
+        <result column="occupation_code" property="occupationCode" />
+        <result column="occupation_name" property="occupationName" />
+        <result column="nationality" property="nationality" />
+        <result column="ethnicity" property="ethnicity" />
+        <result column="education" property="education" />
+        <result column="marital_status" property="maritalStatus" />
+        <result column="newbron_mark" property="newbronMark" />
+        <result column="certificate_type" property="certificateType" />
+        <result column="certificate_no" property="certificateNo" />
+        <result column="health_card_type" property="healthCardType" />
+        <result column="health_card_no" property="healthCardNo" />
+        <result column="insurance_type" property="insuranceType" />
+        <result column="insurance_no" property="insuranceNo" />
+        <result column="residence_province" property="residenceProvince" />
+        <result column="residence_city" property="residenceCity" />
+        <result column="residence_county" property="residenceCounty" />
+        <result column="current_address" property="currentAddress" />
+        <result column="phone_no" property="phoneNo" />
+        <result column="phone_no2" property="phoneNo2" />
+        <result column="email" property="email" />
+        <result column="weixin" property="weixin" />
+        <result column="contact_person1" property="contactPerson1" />
+        <result column="contact_phone_no1" property="contactPhoneNo1" />
+        <result column="contact_person2" property="contactPerson2" />
+        <result column="contact_phone_no2" property="contactPhoneNo2" />
+        <result column="abo_blood_type" property="aboBloodType" />
+        <result column="rh_blood_type" property="rhBloodType" />
+        <result column="extend_data1" property="extendData1" />
+        <result column="extend_data2" property="extendData2" />
+        <result column="record_status" property="recordStatus" />
+    </resultMap>
+
+</mapper>

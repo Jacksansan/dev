@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoshuai.mapper.DrugPurchaseMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xiaoshuai.entity.DrugPurchase">
+        <id column="pur_sn" property="PUR_SN" />
+        <result column="hos_drug_code" property="HOS_DRUG_CODE" />
+        <result column="generic_name" property="GENERIC_NAME" />
+        <result column="trade_name" property="TRADE_NAME" />
+        <result column="manufac" property="MANUFAC" />
+        <result column="approval_no" property="APPROVAL_NO" />
+        <result column="form" property="FORM" />
+        <result column="spec" property="SPEC" />
+        <result column="packing_quantity" property="PACKING_QUANTITY" />
+        <result column="packing_unit" property="PACKING_UNIT" />
+        <result column="pur_unit_price" property="PUR_UNIT_PRICE" />
+        <result column="pur_quantity" property="PUR_QUANTITY" />
+        <result column="pur_total_price" property="PUR_TOTAL_PRICE" />
+        <result column="pur_date" property="PUR_DATE" />
+        <result column="insurance_type" property="INSURANCE_TYPE" />
+<!--        <result column="yy_upload_status" property="yyUploadStatus" />-->
+<!--        <result column="yy_upload_time" property="yyUploadTime" />-->
+<!--        <result column="yy_batch_time" property="yyBatchTime" />-->
+    </resultMap>
+    <sql id="Base_Column_List">
+PUR_SN,HOS_DRUG_CODE,GENERIC_NAME,TRADE_NAME,MANUFAC,APPROVAL_NO,
+	FORM,
+	SPEC,
+	PACKING_QUANTITY,
+	PACKING_UNIT,
+	PUR_UNIT_PRICE,
+	PUR_QUANTITY,
+	PUR_TOTAL_PRICE,
+	PUR_DATE,
+	INSURANCE_TYPE
+    </sql>
+    <select id="getList" resultMap="BaseResultMap">
+    SELECT pur_sn,
+	hos_drug_code,
+	generic_name,
+	trade_name,
+	manufac,
+	approval_no,
+	form,
+	spec,
+	packing_quantity,
+	packing_unit,
+	pur_unit_price,
+	pur_quantity,
+	pur_total_price,
+	pur_date,
+	insurance_type FROM drug_purchase WHERE pur_sn = "94397"
+    </select>
+    <select id="selectByList" resultMap="BaseResultMap">
+        select  PUR_SN,
+	HOS_DRUG_CODE,
+	GENERIC_NAME from drug_purchase where
+        pur_date BETWEEN '2021-03-01 00:00:00' AND '2021-03-31 23:59:59';
+    </select>
+    <select id="selectByPage" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+                from drug_purchase where
+        pur_date BETWEEN #{str_begin} AND #{str_end}
+    </select>
+</mapper>

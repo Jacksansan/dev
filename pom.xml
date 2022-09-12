@@ -8,14 +8,12 @@
     <artifactId>myblog</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    
     <modules>
         <module>myblog-web</module>
         <module>myblog-common</module>
     </modules>
     
-    <!--统一版本
-    管理    t-->
+    <!--统一版本管理t-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -33,6 +31,8 @@
         <druid.version>1.1.22</druid.version>
 <!--        阿里oss对象存储的版本-->
         <ali-oss>3.8.0</ali-oss>
+        <commons.lang.version>2.6</commons.lang.version>
+
     </properties>
 
     <dependencies>
@@ -43,7 +43,7 @@
         </dependency>
     </dependencies>
 
-<!--依赖管理   y-->
+<!--依赖管理-->
     <dependencyManagement>
         <dependencies>
             <!--安全登录security-->
@@ -105,6 +105,11 @@
                 <groupId>com.aliyun.oss</groupId>
                 <artifactId>aliyun-sdk-oss</artifactId>
                 <version>${ali-oss}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons.lang.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -5,10 +5,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author 傅帅  QQ:1766281636
- * @creat 2020- 10-21-下午 16:49
- **/
+
 @Data
 public class Result implements Serializable {
 

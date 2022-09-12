@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoshuai.mapper.LabInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.xiaoshuai.entity.LabInfo">
+        <id column="patient_id" property="patientId" />
+        <result column="visit_sn" property="visitSn" />
+        <result column="lab_sn" property="labSn" />
+        <result column="visit_type" property="visitType" />
+        <result column="visit_card_no" property="visitCardNo" />
+        <result column="outpatient_no" property="outpatientNo" />
+        <result column="visit_times" property="visitTimes" />
+        <result column="hospitalization_times" property="hospitalizationTimes" />
+        <result column="name" property="name" />
+        <result column="inpatient_no" property="inpatientNo" />
+        <result column="apply_no" property="applyNo" />
+        <result column="order_sn" property="orderSn" />
+        <result column="apply_datetime" property="applyDatetime" />
+        <result column="inpatient_no" property="inpatientNo" />
+        <result column="medical_record_no" property="medicalRecordNo" />
+        <result column="outpatient_no" property="outpatientNo" />
+        <result column="specimenType_code" property="specimenTypeCode" />
+        <result column="specimenType_name" property="specimenTypeName" />
+        <result column="test_datetime" property="testDatetime" />
+        <result column="test_method_code" property="testMethodCode" />
+        <result column="test_method" property="testMethod" />
+        <result column="lab_type" property="labType" />
+        <result column="item_no" property="itemNo" />
+        <result column="report_no" property="reportNo" />
+        <result column="item_code" property="itemCode" />
+        <result column="item_name" property="itemName" />
+        <result column="item_groupCode" property="itemGroupCode" />
+        <result column="item_groupName" property="itemGroupName" />
+        <result column="result_quantitative" property="resultQuantitative" />
+        <result column="result_qualitative" property="resultQualitative" />
+        <result column="result_unit" property="resultUnit" />
+        <result column="reference_range" property="referenceRange" />
+        <result column="reference_range_alert" property="referenceRangeAlert" />
+        <result column="report_datetime" property="reportDatetime" />
+        <result column="hospitalization_times" property="hospitalizationTimes" />
+        <result column="extend_data1" property="extendData1" />
+        <result column="extend_data2" property="extendData2" />
+        <result column="record_status" property="recordStatus" />
+<!--        <result column="yy_upload_status" property="yyUploadStatus" />-->
+<!--        <result column="yy_batch_time" property="yyBatchTime" />-->
+<!--        <result column="yy_upload_time" property="yyUploadTime" />-->
+    </resultMap>
+    <sql id="Base_Column_List">
+
+    </sql>
+
+    <select id="selectByPage" resultMap="BaseResultMap">
+    SELECT
+     LAB_SN,
+    PATIENT_ID,
+    VISIT_SN,
+    VISIT_TYPE,
+    VISIT_CARD_NO,
+    OUTPATIENT_NO,
+    VISIT_TIMES,
+    MEDICAL_RECORD_NO,
+    INPATIENT_NO,
+    HOSPITALIZATION_TIMES,
+    NAME,
+    APPLY_NO,
+    ORDER_SN,
+    APPLY_DATETIME,
+    SPECIMEN_TYPE_CODE,
+    SPECIMEN_TYPE_NAME,
+    SPECIMEN_CODE,
+    TEST_DATETIME,
+    TEST_METHOD_CODE,
+    TEST_METHOD,
+    LAB_TYPE,
+    ITEM_GROUP_CODE,
+    ITEM_GROUP_NAME,
+    ITEM_CODE,
+    ITEM_NAME,
+    ITEM_NO,
+    RESULT_QUANTITATIVE,
+    RESULT_QUALITATIVE,
+    RESULT_UNIT,
+    REFERENCE_RANGE,
+    REFERENCE_RANGE_ALERT,
+    REPORT_NO,
+    REPORT_DATETIME,
+    EXTEND_DATA1,
+    EXTEND_DATA2,
+    RECORD_STATUS
+    FROM lab_info
+    where
+        test_datetime BETWEEN #{str_begin} AND #{str_end}
+    </select>
+</mapper>
